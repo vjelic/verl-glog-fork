@@ -12,79 +12,7 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "glog-18be5ab6-c786-41d9-8bdf-1d86ccf3f0c4",
-              "help": {
-                "text": "",
-                "markdown": "## Description\n\nIn Python, the `eval()` function is used to evaluate the Python expression which is passed to it as a string. However, it is considered insecure because it allows the execution of arbitrary Python code. This can lead to serious security issues if an attacker is able to manipulate the string that is passed to `eval()`.\n\nThe `ast.literal_eval()` function, on the other hand, safely parses and evaluates an expression for Python literals (strings, bytes, numbers, tuples, lists, dicts, sets, booleans, and None). It does not evaluate complex expressions, such as function calls or arithmetic expressions, and thus is much safer than `eval()`.\n\n## Mitigation Advice\n\nAvoid using `eval()` whenever possible, especially when dealing with user-supplied input. Instead, consider using `ast.literal_eval()` or other safer alternatives.\n\n## Source Code Fix Recommendation\n\nReplace:\n\n```python\nstring = eval(string)\n```\n\nwith:\n\n```python\nimport ast\nstring = ast.literal_eval(string)\n```\n\n## Library Dependencies\n\nThe `ast` module is part of the Python Standard Library, so no additional library dependencies are required.\n\n## References\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)"
-              },
-              "properties": {
-                "tags": [
-                  "B307"
-                ]
-              }
-            },
-            {
-              "id": "glog-47a6e9d0-0cb5-4abc-9874-8c2bba05078e",
-              "help": {
-                "text": "",
-                "markdown": "## Description\n\nThe \"Potential Insecure Function Use - Consider Safer ast.literal_eval\" vulnerability in Python refers to the potential security risks associated with the use of the `eval()` function. The `eval()` function takes a string and evaluates it as a Python expression. This can be dangerous if the string being evaluated is provided by an untrusted source, as it could lead to arbitrary code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use `ast.literal_eval()` instead of `eval()`. The `ast.literal_eval()` function safely parses and evaluates an expression node or a string containing a Python literal or container display. It is safer than `eval()` because it only evaluates Python literals and does not evaluate complex expressions or function calls, thus preventing arbitrary code execution.\n\n## Source Code Fix Recommendation\n\nReplace the use of `eval()` with `ast.literal_eval()`:\n\n```python\nimport ast\n\npred_matrix = ast.literal_eval(prediction)\n```\n\n## Library Dependencies\n\nThe code example requires the `ast` library, which is a built-in Python library and does not need to be installed separately.\n\n## References\n\n- [CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')](https://cwe.mitre.org/data/definitions/95.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
-              },
-              "properties": {
-                "tags": [
-                  "B307"
-                ]
-              }
-            },
-            {
-              "id": "glog-27934af5-36a2-4237-939d-30dbc57b400f",
-              "help": {
-                "text": "",
-                "markdown": "## Description\n\nThe \"Untrusted Data Deserialization Vulnerability in Pickle Modules\" is a security vulnerability in Python programming language that occurs when an application deserializes data from an untrusted source without proper validation. The `pickle` module in Python is used for serializing and deserializing objects, which can be exploited by an attacker to execute arbitrary code, if the data being deserialized is from an untrusted source.\n\nIn the provided code snippet, the application is deserializing data using the `pickle.loads()` function. If the `test_cases` variable contains data from an untrusted source, it could lead to a potential security vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to avoid deserializing data from untrusted sources. If deserialization is necessary, use safe, built-in Python modules like `json` instead of `pickle`. The `json` module is not vulnerable to deserialization attacks as it does not allow the serialization of arbitrary code.\n\n## Source Code Fix Recommendation\n\nReplace the `pickle.loads()` function with `json.loads()` function. Here is the fixed code:\n\n```python\nimport json\nimport zlib\nimport base64\n\nin_outs = json.loads(zlib.decompress(base64.b64decode(test_cases.encode(\"utf-8\"))))\n```\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- `json`: Built-in Python library for parsing JSON.\n- `pickle`: Built-in Python library for object serialization and deserialization.\n- `zlib`: Built-in Python library for data compression.\n- `base64`: Built-in Python library for encoding binary data to ASCII characters.\n\n## References\n\n- [OWASP Python Security - Deserialization](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#python)\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)"
-              },
-              "properties": {
-                "tags": [
-                  "B301"
-                ]
-              }
-            },
-            {
-              "id": "glog-02344c7f-a148-4b93-a26a-efb5e8c718bc",
-              "help": {
-                "text": "",
-                "markdown": "## Description\n\n\"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation and usage of temporary files or directories. This can lead to a race condition where an attacker can create a symlink to a file not intended to be accessed by the user, leading to information disclosure, denial of service, or even code execution.\n\nIn the provided code snippet, the temporary file path is hardcoded and predictable, which makes it susceptible to such attacks.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use secure methods for creating temporary files and directories. Python's `tempfile` module provides such methods which generate random, non-predictable names for temporary files and directories, reducing the risk of an attacker predicting them.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code snippet:\n\n```python\nimport tempfile\n\n# Create a secure temporary directory\nwith tempfile.TemporaryDirectory() as temp_dir:\n    actor_state_path = temp_dir  # Secure temporary path\n```\n\nIn this code, `tempfile.TemporaryDirectory()` is used to create a secure temporary directory. The `with` statement ensures that the directory is cleaned up once it is no longer needed.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `tempfile`\n\n## References\n\n- [OWASP - Insecure Temporary File](https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File)\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
-              },
-              "properties": {
-                "tags": [
-                  "B108"
-                ]
-              }
-            },
-            {
-              "id": "glog-64ea9763-45af-45d8-bbba-d2f196e15f94",
-              "help": {
-                "text": "",
-                "markdown": "## Description\n\nUntrusted Data Deserialization Vulnerability in Pickle and Related Modules is a critical security vulnerability in Python. The `pickle` module in Python is used for serializing and deserializing Python object structures. However, it is not safe to deserialize data that comes from an untrusted or unauthenticated source. The reason is that the `pickle` module is capable of executing arbitrary code during deserialization. If an attacker can control the input to `pickle.load()`, they can create a payload that executes arbitrary code when it is deserialized, leading to a Remote Code Execution (RCE) vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid using `pickle` or similar modules (like `cPickle`, `dill`, etc.) to deserialize data from untrusted sources. Instead, use safer alternatives like `json` or `yaml.safe_load()` for deserialization. \n\n## Source Code Fix Recommendation\n\nReplace the `pickle.load()` function with a safer alternative. For example, if you are dealing with JSON data, you can use the `json` module:\n\n```python\nimport json\n\n# ...\n\ndata = json.load(f)\n```\n\n## Library Dependencies\n\nThe code example requires the `pickle` module, which is a built-in module in Python, so no additional library dependencies are needed.\n\n## References\n\n- [OWASP Python Security - Deserialization](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#python)\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)\n\nPlease note that the links provided are active and accessible for anonymous users at the time of writing this report."
-              },
-              "properties": {
-                "tags": [
-                  "B301"
-                ]
-              }
-            },
-            {
-              "id": "glog-46d80b1c-3c57-44f1-be49-a21682df957e",
-              "help": {
-                "text": "",
-                "markdown": "## Description\n\nPotential Interface Binding Vulnerability in Python refers to the security risk when a web server or application is configured to listen on all available network interfaces (0.0.0.0) which can expose the server or application to the internet. This can potentially allow unauthorized remote attackers to exploit the application.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to bind the server to localhost (127.0.0.1) or a specific IP address that is not publicly accessible. This will limit the exposure of the application to the internet and reduce the attack surface.\n\n## Source Code Fix Recommendation\n\nHere is the recommended fix for the provided code:\n\n```python\nuvicorn.run(app, host=\"127.0.0.1\", port=8000)\n```\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- uvicorn\n- fastapi (or any ASGI application to be used with `app`)\n\nYou can install these dependencies using pip:\n\n```bash\npip install uvicorn fastapi\n```\n\n## References\n\n- [OWASP - Unvalidated Redirects and Forwards Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
-              },
-              "properties": {
-                "tags": [
-                  "B104"
-                ]
-              }
-            },
-            {
-              "id": "glog-ad4c2cbe-f9ba-4171-b0b9-92c2df9f74c7",
+              "id": "glog-10614539-b218-432a-96dc-2cc3cb5bc691",
               "help": {
                 "text": "",
                 "markdown": "## Description\n\nThe \"Potential Insecure Function Use - Consider Safer ast.literal_eval\" vulnerability in Python refers to the potential security risks associated with the use of the `eval()` function. The `eval()` function takes a string and evaluates it as a Python expression. This can be dangerous if the string being evaluated is derived from user input, as it can lead to arbitrary code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use `ast.literal_eval()` instead of `eval()`. The `ast.literal_eval()` function safely parses and evaluates an expression node or a string containing a Python literal or container display. It is safer than `eval()` because it only evaluates Python literals and does not evaluate complex expressions or function calls, thus preventing arbitrary code execution.\n\n## Source Code Fix Recommendation\n\nInstead of using `eval()`, use `ast.literal_eval()`:\n\n```python\nimport ast\n\nif isinstance(ast.literal_eval(prediction), list):\n```\n\n## Library Dependencies\n\nThe code example requires the `ast` library, which is a built-in Python library and does not need to be installed separately.\n\n## References\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)\n\nPlease note that the links provided are accessible to anonymous users at the time of writing this report."
@@ -96,19 +24,31 @@
               }
             },
             {
-              "id": "glog-1b932029-36c0-47dd-8669-d5c08c7d76d1",
+              "id": "glog-ea52d25e-9e8f-4186-9711-61e246b01638",
               "help": {
                 "text": "",
-                "markdown": "## Description\n\nThe \"Potential Temp File/Directory Security Risk\" vulnerability in Python refers to the insecure usage of temporary files or directories. This vulnerability can lead to several security risks such as race conditions, information disclosure, denial of service, or privilege escalation. In the provided code snippet, the application is using a shared memory directory (`/dev/shm/`) which is world-writable and thus can be manipulated by any process on the system.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid using world-writable directories for storing sensitive information. Instead, use a secure method to create temporary files or directories. Python's `tempfile` module provides functions for creating secure temporary files and directories.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix using Python's `tempfile` module:\n\n```python\nimport tempfile\n\n# Create a secure temporary directory\nwith tempfile.TemporaryDirectory() as shm_model_root:\n    # Use the temporary directory\n    pass\n```\n\nIn this code, `tempfile.TemporaryDirectory()` creates a new directory that can be used as a temporary storage area. The directory and its contents are deleted when the context is exited.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `tempfile`\n\n## References\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+                "markdown": "## Description\n\nThe \"Potential Insecure Function Use - Consider Safer ast.literal_eval\" vulnerability in Python refers to the potential security risks associated with the use of the `eval()` function. The `eval()` function takes a string and evaluates it as a Python expression. This can be dangerous if the string being evaluated is provided by an untrusted source, as it could lead to arbitrary code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use `ast.literal_eval()` instead of `eval()`. The `ast.literal_eval()` function safely parses and evaluates an expression node or a string containing a Python literal or container display. It is safer than `eval()` because it only evaluates Python literals and does not evaluate complex expressions or function calls, thus preventing arbitrary code execution.\n\n## Source Code Fix Recommendation\n\nReplace the use of `eval()` with `ast.literal_eval()`:\n\n```python\nimport ast\n\npred_matrix = ast.literal_eval(prediction)\n```\n\n## Library Dependencies\n\nThe code example requires the `ast` library, which is a built-in Python library and does not need to be installed separately.\n\n## References\n\n- [CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')](https://cwe.mitre.org/data/definitions/95.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
               },
               "properties": {
                 "tags": [
-                  "B108"
+                  "B307"
                 ]
               }
             },
             {
-              "id": "glog-8d0f6e68-3bef-4d5e-92a4-88111129096e",
+              "id": "glog-6c9bb384-bb09-43ce-b687-758feb0b6dd9",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nPotential Interface Binding Vulnerability in Python refers to the security risk when a web server or application is configured to listen on all available network interfaces (0.0.0.0) which can expose the server or application to the internet. This can potentially allow unauthorized remote attackers to exploit the application.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to bind the server to localhost (127.0.0.1) or a specific IP address that is not publicly accessible. This will limit the exposure of the application to the internet and reduce the attack surface.\n\n## Source Code Fix Recommendation\n\nHere is the recommended fix for the provided code:\n\n```python\nuvicorn.run(app, host=\"127.0.0.1\", port=8000)\n```\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- uvicorn\n- fastapi (or any ASGI application to be used with `app`)\n\nYou can install these dependencies using pip:\n\n```bash\npip install uvicorn fastapi\n```\n\n## References\n\n- [OWASP - Unvalidated Redirects and Forwards Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B104"
+                ]
+              }
+            },
+            {
+              "id": "glog-03ace5dc-a952-46f3-8807-4901a0e68ddc",
               "help": {
                 "text": "",
                 "markdown": "## Description\n\nThe vulnerability in question is related to the deserialization of untrusted data using Python's `pickle` module. The `pickle` module is used for serializing and deserializing Python object structures. However, it is not safe to deserialize data that comes from an untrusted or unauthenticated source. This is because `pickle` is capable of executing arbitrary code during deserialization. If an attacker can supply a malicious payload, it can lead to code execution, and potentially, remote code execution (RCE).\n\nIn the provided code snippet, the `pickle.loads()` function is used to deserialize data that has been compressed with `zlib` and encoded with `base64`. If the `example[\"private_test_cases\"]` data comes from an untrusted source, it could lead to the aforementioned vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid deserializing data from untrusted sources with `pickle`. If you need to serialize and deserialize data, consider using a safer method such as JSON. However, keep in mind that JSON is not capable of preserving complex Python-specific data types.\n\nIf you absolutely need to use `pickle`, ensure that the data you are deserializing is from a trusted and authenticated source. You can use cryptographic signatures to verify the authenticity of the data before deserializing it.\n\n## Source Code Fix Recommendation\n\nReplace the `pickle` module with `json` for safer deserialization:\n\n```python\nimport json\nimport zlib\nimport base64\n\n# Assuming example[\"private_test_cases\"] is a JSON string\njson.loads(zlib.decompress(base64.b64decode(example[\"private_test_cases\"].encode(\"utf-8\"))))\n```\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- `pickle`\n- `zlib`\n- `base64`\n\n## References\n\n- [OWASP Deserialization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html)\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)"
@@ -120,7 +60,91 @@
               }
             },
             {
-              "id": "glog-a71bcede-3343-4544-9d31-1864863026aa",
+              "id": "glog-197feae0-7765-498f-a484-af8f06a86a21",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIn Python, the `eval()` function is used to evaluate the Python expression which is passed to it as a string. However, it is considered insecure because it allows the execution of arbitrary Python code. This can lead to serious security issues if an attacker is able to manipulate the string that is passed to `eval()`.\n\nThe `ast.literal_eval()` function, on the other hand, safely parses and evaluates an expression for Python literals (strings, bytes, numbers, tuples, lists, dicts, sets, booleans, and None). It does not evaluate complex expressions, such as function calls or arithmetic expressions, and thus is much safer than `eval()`.\n\n## Mitigation Advice\n\nAvoid using `eval()` whenever possible, especially when dealing with user-supplied input. Instead, consider using `ast.literal_eval()` or other safer alternatives.\n\n## Source Code Fix Recommendation\n\nReplace:\n\n```python\nstring = eval(string)\n```\n\nwith:\n\n```python\nimport ast\nstring = ast.literal_eval(string)\n```\n\n## Library Dependencies\n\nThe `ast` module is part of the Python Standard Library, so no additional library dependencies are required.\n\n## References\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B307"
+                ]
+              }
+            },
+            {
+              "id": "glog-539290c6-c78a-4121-a028-fb88daaa9cc2",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation and usage of temporary files or directories. This can lead to a race condition where an attacker can create a symlink to a file not intended to be accessed by the user, leading to information disclosure, denial of service, or even code execution.\n\nIn the provided code snippet, the temporary file path is hardcoded and predictable, which makes it susceptible to such attacks.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use secure methods for creating temporary files and directories. Python's `tempfile` module provides such methods which generate random, non-predictable names for temporary files and directories, reducing the risk of an attacker predicting them.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code snippet:\n\n```python\nimport tempfile\n\n# Create a secure temporary directory\nwith tempfile.TemporaryDirectory() as temp_dir:\n    actor_state_path = temp_dir  # Secure temporary path\n```\n\nIn this code, `tempfile.TemporaryDirectory()` is used to create a secure temporary directory. The `with` statement ensures that the directory is cleaned up once it is no longer needed.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `tempfile`\n\n## References\n\n- [OWASP - Insecure Temporary File](https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File)\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-349eb497-489a-4c13-8fc5-31c183a69add",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Untrusted Data Deserialization Vulnerability in Pickle Modules\" is a security vulnerability in Python programming language that occurs when an application deserializes data from an untrusted source without proper validation. The `pickle` module in Python is used for serializing and deserializing objects, which can be exploited by an attacker to execute arbitrary code, if the data being deserialized is from an untrusted source.\n\nIn the provided code snippet, the application is deserializing data using the `pickle.loads()` function. If the `test_cases` variable contains data from an untrusted source, it could lead to a potential security vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to avoid deserializing data from untrusted sources. If deserialization is necessary, use safe, built-in Python modules like `json` instead of `pickle`. The `json` module is not vulnerable to deserialization attacks as it does not allow the serialization of arbitrary code.\n\n## Source Code Fix Recommendation\n\nReplace the `pickle.loads()` function with `json.loads()` function. Here is the fixed code:\n\n```python\nimport json\nimport zlib\nimport base64\n\nin_outs = json.loads(zlib.decompress(base64.b64decode(test_cases.encode(\"utf-8\"))))\n```\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- `json`: Built-in Python library for parsing JSON.\n- `pickle`: Built-in Python library for object serialization and deserialization.\n- `zlib`: Built-in Python library for data compression.\n- `base64`: Built-in Python library for encoding binary data to ASCII characters.\n\n## References\n\n- [OWASP Python Security - Deserialization](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#python)\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B301"
+                ]
+              }
+            },
+            {
+              "id": "glog-828cc5e5-e5b0-4bdb-bd9f-4a4723dd39af",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nUntrusted Data Deserialization Vulnerability in Pickle and Related Modules is a critical security vulnerability in Python. The `pickle` module in Python is used for serializing and deserializing Python object structures. However, it is not safe to deserialize data that comes from an untrusted or unauthenticated source. The reason is that the `pickle` module is capable of executing arbitrary code during deserialization. If an attacker can control the input to `pickle.load()`, they can create a payload that executes arbitrary code when it is deserialized, leading to a Remote Code Execution (RCE) vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid using `pickle` or similar modules (like `cPickle`, `dill`, etc.) to deserialize data from untrusted sources. Instead, use safer alternatives like `json` or `yaml.safe_load()` for deserialization. \n\n## Source Code Fix Recommendation\n\nReplace the `pickle.load()` function with a safer alternative. For example, if you are dealing with JSON data, you can use the `json` module:\n\n```python\nimport json\n\n# ...\n\ndata = json.load(f)\n```\n\n## Library Dependencies\n\nThe code example requires the `pickle` module, which is a built-in module in Python, so no additional library dependencies are needed.\n\n## References\n\n- [OWASP Python Security - Deserialization](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#python)\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)\n\nPlease note that the links provided are active and accessible for anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B301"
+                ]
+              }
+            },
+            {
+              "id": "glog-a8a3aca5-287e-47ab-841e-374174da1550",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe MD5 hash function is considered weak due to the high possibility of hash collisions, where different inputs produce the same hash output. This vulnerability can lead to various security issues such as data integrity violation and unauthorized information disclosure. In Python, the `hashlib.md5()` function is used to generate MD5 hashes. If the `usedforsecurity` parameter is set to `False`, it indicates that the hash function is not used for a security-sensitive operation, which may lead to the misuse of the function in a security context.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function such as SHA-256, which is currently considered secure against collision attacks. If the hash function is used for password storage, consider using a password hashing function like bcrypt, scrypt or Argon2 that includes a salt to prevent rainbow table attacks and is designed to be computationally intensive to resist brute-force attacks.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a stronger hash function. Here is an example of how to use the SHA-256 hash function in Python:\n\n```python\nimport hashlib\n\ndef secure_hash(path):\n    return hashlib.sha256(path.encode()).hexdigest()\n```\n\n## Library Dependencies\n\nThe code example requires the `hashlib` library, which is included in the Python Standard Library.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B324"
+                ]
+              }
+            },
+            {
+              "id": "glog-70bbd1e2-f41f-4e6c-8183-c6b97aa78a57",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIn Python, the `eval()` function is used to evaluate the Python expression which is passed to it as a string. However, it is considered insecure because it allows the execution of arbitrary Python code. This can lead to serious security issues if an attacker is able to manipulate the string that is passed to `eval()`.\n\nThe `ast.literal_eval()` function, on the other hand, safely parses and evaluates an expression for Python literals (strings, bytes, numbers, tuples, lists, dicts, sets, booleans, and None). It does not evaluate complex expressions, such as function calls or arithmetic expressions, and thus is much safer than `eval()`.\n\n## Mitigation Advice\n\nAvoid using `eval()` whenever possible, especially when dealing with user-supplied input. Instead, consider using `ast.literal_eval()` or other safer alternatives.\n\n## Source Code Fix Recommendation\n\nReplace:\n\n```python\nstring = eval(string)\n```\n\nwith:\n\n```python\nimport ast\nstring = ast.literal_eval(string)\n```\n\n## Library Dependencies\n\nThe `ast` module is part of the Python Standard Library, so no additional library dependencies are required.\n\n## References\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B307"
+                ]
+              }
+            },
+            {
+              "id": "glog-016903c4-6a6a-4e38-a24f-d6efa5c3a6fa",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Temp File/Directory Security Risk\" vulnerability in Python refers to the insecure usage of temporary files or directories. This vulnerability can lead to several security risks such as race conditions, information disclosure, denial of service, or privilege escalation. In the provided code snippet, the application is using a shared memory directory (`/dev/shm/`) which is world-writable and thus can be manipulated by any process on the system.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid using world-writable directories for storing sensitive information. Instead, use a secure method to create temporary files or directories. Python's `tempfile` module provides functions for creating secure temporary files and directories.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix using Python's `tempfile` module:\n\n```python\nimport tempfile\n\n# Create a secure temporary directory\nwith tempfile.TemporaryDirectory() as shm_model_root:\n    # Use the temporary directory\n    pass\n```\n\nIn this code, `tempfile.TemporaryDirectory()` creates a new directory that can be used as a temporary storage area. The directory and its contents are deleted when the context is exited.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `tempfile`\n\n## References\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-a8df04f6-6255-4f2c-b313-a3dde6200698",
               "help": {
                 "text": "",
                 "markdown": "## Description\n\nThe MD5 hash function is considered weak due to the high probability of collisions, where different inputs produce the same hash output. This vulnerability can be exploited to perform attacks such as hash collisions, preimage, and second preimage attacks. In Python, the `hashlib.md5()` function is used to generate MD5 hashes. When the `usedforsecurity` parameter is set to `False`, it indicates that the hash function is not being used for a security-critical operation, which could potentially lead to vulnerabilities if the hash is used in a security context later.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function such as SHA-256, which is currently considered secure against collision attacks. If the hash function is being used for a security-critical operation, ensure that the `usedforsecurity` parameter is set to `True`.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a stronger hash function like SHA-256. Here is the fixed code:\n\n```python\nimport os\nimport hashlib\n\ndest = os.path.join(shm_model_root, hashlib.sha256(src_abs.encode(\"utf-8\")).hexdigest())\n```\n\n## Library Dependencies\n\nThe code example requires the following Python standard libraries:\n\n- `os`\n- `hashlib`\n\n## References\n\n- [OWASP - Insecure Cryptographic Storage](https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
@@ -128,6 +152,42 @@
               "properties": {
                 "tags": [
                   "B324"
+                ]
+              }
+            },
+            {
+              "id": "glog-6a7fab1b-07b1-4e02-b83c-de5237726051",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Shell Process Initiation: Potential Injection Vulnerability Detected\" is a security vulnerability that can occur in Python programming language when the application uses user input in a system shell command. This can allow an attacker to execute arbitrary commands on the system with the privileges of the vulnerable application. This vulnerability is also known as OS command injection.\n\nThe specific vulnerability sink in the provided code is the `os.system(cmd)` function call, where `cmd` is a string that contains a system command. If an attacker can control the value of `cmd`, they can inject malicious commands.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, avoid using shell commands whenever possible. If you must use a shell command, ensure that user input is properly sanitized before it is included in the command. This can be done by using a whitelist of allowed characters, or by escaping special characters that could be used to inject malicious commands.\n\n## Source Code Fix Recommendation\n\nInstead of using `os.system(cmd)`, use `subprocess.run()` with a list of arguments. This function does not use the shell, so it is not vulnerable to command injection. Here is an example:\n\n```python\nimport subprocess\n\n# Instead of this:\n# os.system(cmd)\n\n# Do this:\nsubprocess.run(['ls', '-l'])\n```\n\nIn this example, `['ls', '-l']` is a list of arguments that will be passed to the `ls` command. The arguments are not processed by the shell, so they cannot be used to inject malicious commands.\n\n## Library Dependencies\n\nThe code example requires the `subprocess` module, which is included in the standard Python library.\n\n## OWASP Resources\n\n- [Command Injection](https://owasp.org/www-community/attacks/Command_Injection)\n- [Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')](https://cwe.mitre.org/data/definitions/78.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B605"
+                ]
+              }
+            },
+            {
+              "id": "glog-5e5888e4-ad18-4a1b-ac01-c4c0012d0492",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Insecure Function Use - Consider Safer ast.literal_eval\" vulnerability in Python refers to the potential security risks associated with the use of the `eval()` function. The `eval()` function takes a string and evaluates it as a Python expression. This can be dangerous if the string being evaluated is derived from user input, as it can lead to arbitrary code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use `ast.literal_eval()` instead of `eval()`. The `ast.literal_eval()` function safely parses and evaluates an expression node or a string containing a Python literal or container display. It is safer than `eval()` because it only evaluates Python literals and does not evaluate complex expressions or function calls, thus preventing arbitrary code execution.\n\n## Source Code Fix Recommendation\n\nInstead of using `eval()`, use `ast.literal_eval()`:\n\n```python\nimport ast\n\nif isinstance(ast.literal_eval(prediction), list):\n```\n\n## Library Dependencies\n\nThe code example requires the `ast` library, which is a built-in Python library and does not need to be installed separately.\n\n## References\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)\n\nPlease note that the links provided are accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B307"
+                ]
+              }
+            },
+            {
+              "id": "glog-460e0d5c-f3a6-4c32-9815-6928f68b22c1",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Potential Insecure Function Use - Consider Safer ast.literal_eval\" vulnerability in Python refers to the potential security risks associated with the use of the `eval()` function. The `eval()` function takes a string and evaluates it as a Python expression. This can be dangerous if the string being evaluated is provided by an untrusted source, as it could lead to arbitrary code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use `ast.literal_eval()` instead of `eval()`. The `ast.literal_eval()` function safely parses and evaluates an expression node or a string containing a Python literal or container display. It is safer than `eval()` because it only evaluates Python literals and does not evaluate complex expressions or function calls, thus preventing arbitrary code execution.\n\n## Source Code Fix Recommendation\n\nReplace the use of `eval()` with `ast.literal_eval()`:\n\n```python\nimport ast\n\npred_matrix = ast.literal_eval(prediction)\n```\n\n## Library Dependencies\n\nThe code example requires the `ast` library, which is a built-in Python library and does not need to be installed separately.\n\n## References\n\n- [CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')](https://cwe.mitre.org/data/definitions/95.html)\n\nPlease note that the links provided are active and accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B307"
                 ]
               }
             }
@@ -143,229 +203,7 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "glog-18be5ab6-c786-41d9-8bdf-1d86ccf3f0c4",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "recipe/entropy/reward_score/entropy_math/grader.py"
-                },
-                "region": {
-                  "startLine": 169,
-                  "startColumn": 22,
-                  "endLine": 169,
-                  "endColumn": 34,
-                  "snippet": {
-                    "text": "            string = eval(string)\n"
-                  }
-                },
-                "contextRegion": {
-                  "startLine": 168,
-                  "endLine": 170,
-                  "snippet": {
-                    "text": "        with contextlib.suppress(Exception):\n            string = eval(string)\n\n"
-                  }
-                }
-              }
-            }
-          ],
-          "properties": {
-            "issue_severity": "MEDIUM",
-            "issue_confidence": "HIGH"
-          }
-        },
-        {
-          "ruleId": "glog-47a6e9d0-0cb5-4abc-9874-8c2bba05078e",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "recipe/entropy/reward_score/entropy_math/grader.py"
-                },
-                "region": {
-                  "startLine": 301,
-                  "startColumn": 31,
-                  "endLine": 301,
-                  "endColumn": 47,
-                  "snippet": {
-                    "text": "                pred_matrix = eval(prediction)\n"
-                  }
-                },
-                "contextRegion": {
-                  "startLine": 300,
-                  "endLine": 302,
-                  "snippet": {
-                    "text": "            try:\n                pred_matrix = eval(prediction)\n                # ref_matrix_items = reference.split()[1:-1:2]\n"
-                  }
-                }
-              }
-            }
-          ],
-          "properties": {
-            "issue_severity": "MEDIUM",
-            "issue_confidence": "HIGH"
-          }
-        },
-        {
-          "ruleId": "glog-27934af5-36a2-4237-939d-30dbc57b400f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Untrusted Data Deserialization Vulnerability in Pickle Modules"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "recipe/r1/tasks/livecodebench.py"
-                },
-                "region": {
-                  "startLine": 63,
-                  "startColumn": 30,
-                  "endLine": 63,
-                  "endColumn": 105,
-                  "snippet": {
-                    "text": "        in_outs = json.loads(pickle.loads(zlib.decompress(base64.b64decode(test_cases.encode(\"utf-8\")))))\n"
-                  }
-                },
-                "contextRegion": {
-                  "startLine": 62,
-                  "endLine": 64,
-                  "snippet": {
-                    "text": "        print(f\"Error loading test cases: {e}\")\n        in_outs = json.loads(pickle.loads(zlib.decompress(base64.b64decode(test_cases.encode(\"utf-8\")))))\n\n"
-                  }
-                }
-              }
-            }
-          ],
-          "properties": {
-            "issue_severity": "MEDIUM",
-            "issue_confidence": "HIGH"
-          }
-        },
-        {
-          "ruleId": "glog-02344c7f-a148-4b93-a26a-efb5e8c718bc",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Potential Unsafe Use of Temporary File/Directory"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "recipe/spin/spin_trainer.py"
-                },
-                "region": {
-                  "startLine": 1082,
-                  "startColumn": 52,
-                  "endLine": 1082,
-                  "endColumn": 74,
-                  "snippet": {
-                    "text": "                                actor_state_path = \"/tmp/actor_state_mid\"  # Temporary path\n"
-                  }
-                },
-                "contextRegion": {
-                  "startLine": 1081,
-                  "endLine": 1083,
-                  "snippet": {
-                    "text": "                                #    Example placeholder using a conceptual save/load mechanism:\n                                actor_state_path = \"/tmp/actor_state_mid\"  # Temporary path\n                                self.actor_rollout_wg.save_checkpoint(actor_state_path)  # Adapt save logic\n"
-                  }
-                }
-              }
-            }
-          ],
-          "properties": {
-            "issue_severity": "MEDIUM",
-            "issue_confidence": "MEDIUM"
-          }
-        },
-        {
-          "ruleId": "glog-64ea9763-45af-45d8-bbba-d2f196e15f94",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "\"Untrusted Data Deserialization Vulnerability in Pickle and Related Modules\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "verl/protocol.py"
-                },
-                "region": {
-                  "startLine": 299,
-                  "startColumn": 20,
-                  "endLine": 299,
-                  "endColumn": 34,
-                  "snippet": {
-                    "text": "            data = pickle.load(f)\n"
-                  }
-                },
-                "contextRegion": {
-                  "startLine": 298,
-                  "endLine": 300,
-                  "snippet": {
-                    "text": "        with open(filepath, \"rb\") as f:\n            data = pickle.load(f)\n            return data\n"
-                  }
-                }
-              }
-            }
-          ],
-          "properties": {
-            "issue_severity": "MEDIUM",
-            "issue_confidence": "HIGH"
-          }
-        },
-        {
-          "ruleId": "glog-46d80b1c-3c57-44f1-be49-a21682df957e",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Potential Interface Binding Vulnerability"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "examples/sglang_multiturn/search_r1_like/local_dense_retriever/retrieval_server.py"
-                },
-                "region": {
-                  "startLine": 415,
-                  "startColumn": 27,
-                  "endLine": 415,
-                  "endColumn": 36,
-                  "snippet": {
-                    "text": "    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n"
-                  }
-                },
-                "contextRegion": {
-                  "startLine": 414,
-                  "endLine": 415,
-                  "snippet": {
-                    "text": "    # 3) Launch the server. By default, it listens on http://127.0.0.1:8000\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n"
-                  }
-                }
-              }
-            }
-          ],
-          "properties": {
-            "issue_severity": "MEDIUM",
-            "issue_confidence": "MEDIUM"
-          }
-        },
-        {
-          "ruleId": "glog-ad4c2cbe-f9ba-4171-b0b9-92c2df9f74c7",
+          "ruleId": "glog-10614539-b218-432a-96dc-2cc3cb5bc691",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -402,32 +240,69 @@
           }
         },
         {
-          "ruleId": "glog-1b932029-36c0-47dd-8669-d5c08c7d76d1",
+          "ruleId": "glog-ea52d25e-9e8f-4186-9711-61e246b01638",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Potential Temp File/Directory Security Risk"
+            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "verl/utils/fs.py"
+                  "uri": "recipe/entropy/reward_score/entropy_math/grader.py"
                 },
                 "region": {
-                  "startLine": 145,
-                  "startColumn": 22,
-                  "endLine": 145,
-                  "endColumn": 44,
+                  "startLine": 301,
+                  "startColumn": 31,
+                  "endLine": 301,
+                  "endColumn": 47,
                   "snippet": {
-                    "text": "    shm_model_root = \"/dev/shm/verl-cache/\"\n"
+                    "text": "                pred_matrix = eval(prediction)\n"
                   }
                 },
                 "contextRegion": {
-                  "startLine": 144,
-                  "endLine": 146,
+                  "startLine": 300,
+                  "endLine": 302,
                   "snippet": {
-                    "text": "    \"\"\"\n    shm_model_root = \"/dev/shm/verl-cache/\"\n    src_abs = os.path.abspath(os.path.normpath(src))\n"
+                    "text": "            try:\n                pred_matrix = eval(prediction)\n                # ref_matrix_items = reference.split()[1:-1:2]\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-6c9bb384-bb09-43ce-b687-758feb0b6dd9",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Interface Binding Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "examples/sglang_multiturn/search_r1_like/local_dense_retriever/retrieval_server.py"
+                },
+                "region": {
+                  "startLine": 415,
+                  "startColumn": 27,
+                  "endLine": 415,
+                  "endColumn": 36,
+                  "snippet": {
+                    "text": "    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 414,
+                  "endLine": 415,
+                  "snippet": {
+                    "text": "    # 3) Launch the server. By default, it listens on http://127.0.0.1:8000\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n"
                   }
                 }
               }
@@ -439,7 +314,7 @@
           }
         },
         {
-          "ruleId": "glog-8d0f6e68-3bef-4d5e-92a4-88111129096e",
+          "ruleId": "glog-03ace5dc-a952-46f3-8807-4901a0e68ddc",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -476,7 +351,266 @@
           }
         },
         {
-          "ruleId": "glog-a71bcede-3343-4544-9d31-1864863026aa",
+          "ruleId": "glog-197feae0-7765-498f-a484-af8f06a86a21",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "recipe/entropy/reward_score/entropy_math/grader.py"
+                },
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 22,
+                  "endLine": 169,
+                  "endColumn": 34,
+                  "snippet": {
+                    "text": "            string = eval(string)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 168,
+                  "endLine": 170,
+                  "snippet": {
+                    "text": "        with contextlib.suppress(Exception):\n            string = eval(string)\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-539290c6-c78a-4121-a028-fb88daaa9cc2",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "recipe/spin/spin_trainer.py"
+                },
+                "region": {
+                  "startLine": 1082,
+                  "startColumn": 52,
+                  "endLine": 1082,
+                  "endColumn": 74,
+                  "snippet": {
+                    "text": "                                actor_state_path = \"/tmp/actor_state_mid\"  # Temporary path\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 1081,
+                  "endLine": 1083,
+                  "snippet": {
+                    "text": "                                #    Example placeholder using a conceptual save/load mechanism:\n                                actor_state_path = \"/tmp/actor_state_mid\"  # Temporary path\n                                self.actor_rollout_wg.save_checkpoint(actor_state_path)  # Adapt save logic\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-349eb497-489a-4c13-8fc5-31c183a69add",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Untrusted Data Deserialization Vulnerability in Pickle Modules"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "recipe/r1/tasks/livecodebench.py"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 30,
+                  "endLine": 63,
+                  "endColumn": 105,
+                  "snippet": {
+                    "text": "        in_outs = json.loads(pickle.loads(zlib.decompress(base64.b64decode(test_cases.encode(\"utf-8\")))))\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 62,
+                  "endLine": 64,
+                  "snippet": {
+                    "text": "        print(f\"Error loading test cases: {e}\")\n        in_outs = json.loads(pickle.loads(zlib.decompress(base64.b64decode(test_cases.encode(\"utf-8\")))))\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-828cc5e5-e5b0-4bdb-bd9f-4a4723dd39af",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Untrusted Data Deserialization Vulnerability in Pickle and Related Modules\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/protocol.py"
+                },
+                "region": {
+                  "startLine": 299,
+                  "startColumn": 20,
+                  "endLine": 299,
+                  "endColumn": 34,
+                  "snippet": {
+                    "text": "            data = pickle.load(f)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 298,
+                  "endLine": 300,
+                  "snippet": {
+                    "text": "        with open(filepath, \"rb\") as f:\n            data = pickle.load(f)\n            return data\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-a8a3aca5-287e-47ab-841e-374174da1550",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Weak MD5 Hash Vulnerability with usedforsecurity=False Setting"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/fs.py"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 12,
+                  "endLine": 58,
+                  "endColumn": 38,
+                  "snippet": {
+                    "text": "    return hashlib.md5(path.encode()).hexdigest()\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 57,
+                  "endLine": 59,
+                  "snippet": {
+                    "text": "    \"\"\"\n    return hashlib.md5(path.encode()).hexdigest()\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "HIGH",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-70bbd1e2-f41f-4e6c-8183-c6b97aa78a57",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/reward_score/prime_math/grader.py"
+                },
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 22,
+                  "endLine": 169,
+                  "endColumn": 34,
+                  "snippet": {
+                    "text": "            string = eval(string)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 168,
+                  "endLine": 170,
+                  "snippet": {
+                    "text": "        with contextlib.suppress(Exception):\n            string = eval(string)\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-016903c4-6a6a-4e38-a24f-d6efa5c3a6fa",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Temp File/Directory Security Risk"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/fs.py"
+                },
+                "region": {
+                  "startLine": 145,
+                  "startColumn": 22,
+                  "endLine": 145,
+                  "endColumn": 44,
+                  "snippet": {
+                    "text": "    shm_model_root = \"/dev/shm/verl-cache/\"\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 144,
+                  "endLine": 146,
+                  "snippet": {
+                    "text": "    \"\"\"\n    shm_model_root = \"/dev/shm/verl-cache/\"\n    src_abs = os.path.abspath(os.path.normpath(src))\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-a8df04f6-6255-4f2c-b313-a3dde6200698",
           "kind": "fail",
           "level": "error",
           "message": {
@@ -509,6 +643,117 @@
           ],
           "properties": {
             "issue_severity": "HIGH",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-6a7fab1b-07b1-4e02-b83c-de5237726051",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "\"Shell Process Initiation: Potential Injection Vulnerability Detected\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/hdfs_io.py"
+                },
+                "region": {
+                  "startLine": 141,
+                  "startColumn": 12,
+                  "endLine": 141,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "    return os.system(cmd)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 140,
+                  "endLine": 142,
+                  "snippet": {
+                    "text": "def _run_cmd(cmd: str, timeout=None):\n    return os.system(cmd)\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "HIGH",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-5e5888e4-ad18-4a1b-ac01-c4c0012d0492",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/reward_score/prime_math/grader.py"
+                },
+                "region": {
+                  "startLine": 299,
+                  "startColumn": 23,
+                  "endLine": 299,
+                  "endColumn": 39,
+                  "snippet": {
+                    "text": "        if isinstance(eval(prediction), list):\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 298,
+                  "endLine": 300,
+                  "snippet": {
+                    "text": "    elif \"\\begin{pmatrix}\" in reference and prediction.startswith(\"[\") and prediction.endswith(\"]\"):\n        if isinstance(eval(prediction), list):\n            try:\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-460e0d5c-f3a6-4c32-9815-6928f68b22c1",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Insecure Function Use - Consider Safer ast.literal_eval."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/reward_score/prime_math/grader.py"
+                },
+                "region": {
+                  "startLine": 301,
+                  "startColumn": 31,
+                  "endLine": 301,
+                  "endColumn": 47,
+                  "snippet": {
+                    "text": "                pred_matrix = eval(prediction)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 300,
+                  "endLine": 302,
+                  "snippet": {
+                    "text": "            try:\n                pred_matrix = eval(prediction)\n                # ref_matrix_items = reference.split()[1:-1:2]\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
             "issue_confidence": "HIGH"
           }
         }
