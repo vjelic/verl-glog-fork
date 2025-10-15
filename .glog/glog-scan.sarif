@@ -36,30 +36,6 @@
               }
             },
             {
-              "id": "3081e6f5-f3e6-377a-b3f0-a29ffeb09e8b",
-              "name": "resources.rules.use-workdir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.use-workdir"
-              },
-              "fullDescription": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.use-workdir"
-                ]
-              }
-            },
-            {
               "id": "f2dc50d3-fa07-30dc-b8ee-da1eb9904316",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
@@ -108,6 +84,30 @@
               }
             },
             {
+              "id": "3081e6f5-f3e6-377a-b3f0-a29ffeb09e8b",
+              "name": "resources.rules.use-workdir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.use-workdir"
+              },
+              "fullDescription": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.use-workdir"
+                ]
+              }
+            },
+            {
               "id": "9c6fefaa-74b2-3813-ab0b-805fc999faf3",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
@@ -128,30 +128,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-image-version"
-                ]
-              }
-            },
-            {
-              "id": "0ac945be-d33f-3680-a60a-74319f202704",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -204,7 +180,7 @@
               }
             },
             {
-              "id": "8bc29d0e-be81-3e58-bf46-b455c5b44319",
+              "id": "0ac945be-d33f-3680-a60a-74319f202704",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -248,6 +224,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-image-version"
+                ]
+              }
+            },
+            {
+              "id": "8bc29d0e-be81-3e58-bf46-b455c5b44319",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -300,30 +300,6 @@
               }
             },
             {
-              "id": "777505a3-0924-3432-b55a-b081a2041005",
-              "name": "resources.rules.remove-package-cache",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.remove-package-cache"
-              },
-              "fullDescription": {
-                "text": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3009](https://github.com/hadolint/hadolint/wiki/DL3009)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.remove-package-cache"
-                ]
-              }
-            },
-            {
               "id": "5d5314db-0164-3334-88fc-056d8840ddc2",
               "name": "resources.rules.missing-no-install-recommends",
               "shortDescription": {
@@ -344,30 +320,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-no-install-recommends"
-                ]
-              }
-            },
-            {
-              "id": "d8a52bb2-ac43-3c12-8552-3e05cd0aa7a5",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -396,7 +348,31 @@
               }
             },
             {
-              "id": "072af968-94f7-3b31-a390-008ea7c3969e",
+              "id": "777505a3-0924-3432-b55a-b081a2041005",
+              "name": "resources.rules.remove-package-cache",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.remove-package-cache"
+              },
+              "fullDescription": {
+                "text": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3009](https://github.com/hadolint/hadolint/wiki/DL3009)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.remove-package-cache"
+                ]
+              }
+            },
+            {
+              "id": "d8a52bb2-ac43-3c12-8552-3e05cd0aa7a5",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -444,26 +420,26 @@
               }
             },
             {
-              "id": "59d2ee81-af18-3b52-904e-cb3f0631745e",
-              "name": "resources.rules.set-pipefail",
+              "id": "072af968-94f7-3b31-a390-008ea7c3969e",
+              "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.set-pipefail"
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
               },
               "fullDescription": {
-                "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
               },
               "defaultConfiguration": {
                 "enabled": true,
-                "level": "warning"
+                "level": "note"
               },
               "help": {
-                "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL4006](https://github.com/hadolint/hadolint/wiki/DL4006)\n"
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.set-pipefail"
+                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -492,7 +468,7 @@
               }
             },
             {
-              "id": "8ccbbbb8-035b-352c-a949-8754533b9c53",
+              "id": "59d2ee81-af18-3b52-904e-cb3f0631745e",
               "name": "resources.rules.set-pipefail",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.set-pipefail"
@@ -512,30 +488,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.set-pipefail"
-                ]
-              }
-            },
-            {
-              "id": "fd41d486-9e4f-30fd-b264-4ac2df817150",
-              "name": "resources.rules.use-workdir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.use-workdir"
-              },
-              "fullDescription": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.use-workdir"
                 ]
               }
             },
@@ -564,7 +516,55 @@
               }
             },
             {
+              "id": "8ccbbbb8-035b-352c-a949-8754533b9c53",
+              "name": "resources.rules.set-pipefail",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.set-pipefail"
+              },
+              "fullDescription": {
+                "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL4006](https://github.com/hadolint/hadolint/wiki/DL4006)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.set-pipefail"
+                ]
+              }
+            },
+            {
               "id": "11efba98-12b9-3a2b-943c-ea124d9466e0",
+              "name": "resources.rules.use-workdir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.use-workdir"
+              },
+              "fullDescription": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.use-workdir"
+                ]
+              }
+            },
+            {
+              "id": "fd41d486-9e4f-30fd-b264-4ac2df817150",
               "name": "resources.rules.use-workdir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-workdir"
@@ -636,30 +636,6 @@
               }
             },
             {
-              "id": "45357494-4929-32af-bc56-d99a50c00384",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
-                ]
-              }
-            },
-            {
               "id": "5188d90d-903f-3ecb-a43f-8c57004aeb1b",
               "name": "resources.rules.missing-user",
               "shortDescription": {
@@ -684,7 +660,55 @@
               }
             },
             {
+              "id": "45357494-4929-32af-bc56-d99a50c00384",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
               "id": "3739b7c0-aaad-3ad4-a906-bac82c7e3852",
+              "name": "resources.rules.missing-image-version",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-image-version"
+              },
+              "fullDescription": {
+                "text": "Images should be tagged with an explicit version to produce deterministic container images."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Images should be tagged with an explicit version to produce deterministic container images.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Images should be tagged with an explicit version to produce deterministic container images.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3006](https://github.com/hadolint/hadolint/wiki/DL3006)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-image-version"
+                ]
+              }
+            },
+            {
+              "id": "eb14a648-7be6-3850-8d2e-092bed79d3ac",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-image-version"
@@ -728,30 +752,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.use-workdir"
-                ]
-              }
-            },
-            {
-              "id": "eb14a648-7be6-3850-8d2e-092bed79d3ac",
-              "name": "resources.rules.missing-image-version",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-image-version"
-              },
-              "fullDescription": {
-                "text": "Images should be tagged with an explicit version to produce deterministic container images."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Images should be tagged with an explicit version to produce deterministic container images.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Images should be tagged with an explicit version to produce deterministic container images.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3006](https://github.com/hadolint/hadolint/wiki/DL3006)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-image-version"
                 ]
               }
             },
@@ -924,6 +924,30 @@
               }
             },
             {
+              "id": "06019f38-667e-33af-aa2c-fca8b5db7e8b",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
               "id": "882267eb-292c-3466-a154-e5206faddfac",
               "name": "resources.rules.set-pipefail",
               "shortDescription": {
@@ -972,7 +996,7 @@
               }
             },
             {
-              "id": "a787f6e9-3aaf-3518-b600-687dedff9283",
+              "id": "fbae2218-3890-32ab-883a-33d2ecbf8277",
               "name": "resources.rules.set-pipefail",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.set-pipefail"
@@ -996,7 +1020,7 @@
               }
             },
             {
-              "id": "fbae2218-3890-32ab-883a-33d2ecbf8277",
+              "id": "a787f6e9-3aaf-3518-b600-687dedff9283",
               "name": "resources.rules.set-pipefail",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.set-pipefail"
@@ -4060,30 +4084,6 @@
               }
             },
             {
-              "id": "c0579060-9854-335e-81f0-9db25cd02741",
-              "name": "resources.rules.useless-literal-dict",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.useless-literal-dict"
-              },
-              "fullDescription": {
-                "text": "key `$X` is uselessly assigned twice"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "key `$X` is uselessly assigned twice\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "key `$X` is uselessly assigned twice\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.useless-literal-dict"
-                ]
-              }
-            },
-            {
               "id": "0b7a65df-d398-3ceb-b287-edfdd3cc19e1",
               "name": "resources.rules.useless-inner-function",
               "shortDescription": {
@@ -4104,6 +4104,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.useless-inner-function"
+                ]
+              }
+            },
+            {
+              "id": "c0579060-9854-335e-81f0-9db25cd02741",
+              "name": "resources.rules.useless-literal-dict",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.useless-literal-dict"
+              },
+              "fullDescription": {
+                "text": "key `$X` is uselessly assigned twice"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "key `$X` is uselessly assigned twice\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "key `$X` is uselessly assigned twice\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.useless-literal-dict"
                 ]
               }
             },
@@ -4158,31 +4182,6 @@
               }
             },
             {
-              "id": "a61b6820-139f-30a0-a061-229ddd6ec303",
-              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "shortDescription": {
-                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-              },
-              "fullDescription": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "help": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-                ]
-              }
-            },
-            {
               "id": "568c2484-d0a5-3231-b870-f006aa5b44b4",
               "name": "python.lang.security.deserialization.pickle.avoid-pickle",
               "shortDescription": {
@@ -4204,6 +4203,31 @@
                 "precision": "very-high",
                 "tags": [
                   "python.lang.security.deserialization.pickle.avoid-pickle"
+                ]
+              }
+            },
+            {
+              "id": "a61b6820-139f-30a0-a061-229ddd6ec303",
+              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
+              "shortDescription": {
+                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
+              },
+              "fullDescription": {
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
+              "help": {
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
                 ]
               }
             },
@@ -4259,30 +4283,6 @@
             },
             {
               "id": "d3f060fa-cce0-388a-8b73-4ae3862f877c",
-              "name": "resources.rules.arbitrary-sleep",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.arbitrary-sleep"
-              },
-              "fullDescription": {
-                "text": "time.sleep() call; did you mean to leave this in?"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "time.sleep() call; did you mean to leave this in?\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "time.sleep() call; did you mean to leave this in?\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.arbitrary-sleep"
-                ]
-              }
-            },
-            {
-              "id": "81934d1e-e404-3fb5-a231-6a56b846b1ca",
               "name": "resources.rules.arbitrary-sleep",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.arbitrary-sleep"
@@ -4648,6 +4648,30 @@
               }
             },
             {
+              "id": "845d2029-dbaf-34e0-8ef9-44ceaae58c1d",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
               "id": "4330e77d-130e-3872-bf89-97452ff7f964",
               "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "shortDescription": {
@@ -4669,30 +4693,6 @@
                 "precision": "very-high",
                 "tags": [
                   "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-                ]
-              }
-            },
-            {
-              "id": "845d2029-dbaf-34e0-8ef9-44ceaae58c1d",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
                 ]
               }
             },
@@ -6107,7 +6107,7 @@
               }
             },
             {
-              "id": "8e08b079-a12a-3b8f-8fb3-54f1c81bfede",
+              "id": "9b93ac05-df9c-3f31-a3cc-ca60f91a9c41",
               "name": "python.lang.security.deserialization.pickle.avoid-pickle",
               "shortDescription": {
                 "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-pickle"
@@ -6132,7 +6132,7 @@
               }
             },
             {
-              "id": "9b93ac05-df9c-3f31-a3cc-ca60f91a9c41",
+              "id": "8e08b079-a12a-3b8f-8fb3-54f1c81bfede",
               "name": "python.lang.security.deserialization.pickle.avoid-pickle",
               "shortDescription": {
                 "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-pickle"
@@ -6199,37 +6199,6 @@
           "properties": {}
         },
         {
-          "ruleId": "3081e6f5-f3e6-377a-b3f0-a29ffeb09e8b",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.extention.awsefa",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 1,
-                  "endLine": 17,
-                  "endColumn": 7,
-                  "snippet": {
-                    "text": "RUN cd /tmp && \\"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "95919ebb45fb195bd6ffacf3e419276195fa8c0f3881bc23984f895e1928befb719f65d5ddcf61ed6748c958fe5eae54b309ed085f986899faed5f2bb8fa6f31_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "f2dc50d3-fa07-30dc-b8ee-da1eb9904316",
           "kind": "fail",
           "level": "warning",
@@ -6292,6 +6261,37 @@
           "properties": {}
         },
         {
+          "ruleId": "3081e6f5-f3e6-377a-b3f0-a29ffeb09e8b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.extention.awsefa",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 1,
+                  "endLine": 17,
+                  "endColumn": 7,
+                  "snippet": {
+                    "text": "RUN cd /tmp && \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "95919ebb45fb195bd6ffacf3e419276195fa8c0f3881bc23984f895e1928befb719f65d5ddcf61ed6748c958fe5eae54b309ed085f986899faed5f2bb8fa6f31_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "9c6fefaa-74b2-3813-ab0b-805fc999faf3",
           "kind": "fail",
           "level": "warning",
@@ -6319,37 +6319,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "7911f46a2b649a55c7f353b5dad730f90e7a38b75f198f0b229cfbe036ad692773caaa233b66c398c9f25b732313530a2bf6da5cf46b878990065804f9126283_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "0ac945be-d33f-3680-a60a-74319f202704",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip3 install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.ngc.vllm",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 46,
-                  "startColumn": 1,
-                  "endLine": 46,
-                  "endColumn": 72,
-                  "snippet": {
-                    "text": "RUN MAX_JOBS=1 NINJA_FLAGS=\"-j1\" TE_BUILD_WITH_NINJA=0 pip3 install git+https://github.com/eric-haibin-lin/TransformerEngine.git@v1.7.0"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "5365f61df98f067f6df17ea3a1cca91a347253b734382df758ec8a23df32934c6cf437750f7a0cf76a01bcf1222f00ea964fe95a367e5b55577cd9c8f1644584_0"
           },
           "properties": {}
         },
@@ -6416,33 +6385,33 @@
           "properties": {}
         },
         {
-          "ruleId": "8bc29d0e-be81-3e58-bf46-b455c5b44319",
+          "ruleId": "0ac945be-d33f-3680-a60a-74319f202704",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+            "text": "This 'pip3 install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "docker/Dockerfile.ngc.vllm0.8",
+                  "uri": "docker/Dockerfile.ngc.vllm",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 37,
+                  "startLine": 46,
                   "startColumn": 1,
-                  "endLine": 39,
-                  "endColumn": 36,
+                  "endLine": 46,
+                  "endColumn": 72,
                   "snippet": {
-                    "text": "RUN pip config set global.index-url \"${PIP_INDEX}\" && \\\n    pip config set global.extra-index-url \"${PIP_INDEX}\" && \\\n    python -m pip install --upgrade pip"
+                    "text": "RUN MAX_JOBS=1 NINJA_FLAGS=\"-j1\" TE_BUILD_WITH_NINJA=0 pip3 install git+https://github.com/eric-haibin-lin/TransformerEngine.git@v1.7.0"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "78c100b4d4dc04623b2bd201ebdfc2773be60000d77682acd57eca7df7065f604659649519cf74858b1d076bc18629cc4e844623eae4f9a21781a01bd142e392_0"
+            "matchBasedId/v1": "5365f61df98f067f6df17ea3a1cca91a347253b734382df758ec8a23df32934c6cf437750f7a0cf76a01bcf1222f00ea964fe95a367e5b55577cd9c8f1644584_0"
           },
           "properties": {}
         },
@@ -6474,6 +6443,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "1cdd923531fcf66a8eed1d8f8996907393aa86dafcfaf1408949b62232820c008e88224105a8908c8bf49ba221fb4d9b2f604b70b49de0d5ad9bdb5ac5067a25_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "8bc29d0e-be81-3e58-bf46-b455c5b44319",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.ngc.vllm0.8",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 1,
+                  "endLine": 39,
+                  "endColumn": 36,
+                  "snippet": {
+                    "text": "RUN pip config set global.index-url \"${PIP_INDEX}\" && \\\n    pip config set global.extra-index-url \"${PIP_INDEX}\" && \\\n    python -m pip install --upgrade pip"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "78c100b4d4dc04623b2bd201ebdfc2773be60000d77682acd57eca7df7065f604659649519cf74858b1d076bc18629cc4e844623eae4f9a21781a01bd142e392_0"
           },
           "properties": {}
         },
@@ -6540,37 +6540,6 @@
           "properties": {}
         },
         {
-          "ruleId": "777505a3-0924-3432-b55a-b081a2041005",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.rocm",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 14,
-                  "startColumn": 1,
-                  "endLine": 14,
-                  "endColumn": 19,
-                  "snippet": {
-                    "text": "RUN apt-get update"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "a5c38ffbf2f415d0a9278d9790c4d145c81653e433be6131d63eb526721a801d10483217d7951b67aa9402aad4c9627c2453db64e24575d3d0507777482b3e76_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "5d5314db-0164-3334-88fc-056d8840ddc2",
           "kind": "fail",
           "level": "warning",
@@ -6598,37 +6567,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "bb7dea851d939d926bd3bd68f6523bceb20e9f4c5c9b8da2720073448b9f64ea3b487e43d94b8ecf42ab2b4979decdbe7a81dbdce51e1d95ac3b6e3411815010_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "d8a52bb2-ac43-3c12-8552-3e05cd0aa7a5",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.rocm",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 71,
-                  "startColumn": 1,
-                  "endLine": 71,
-                  "endColumn": 23,
-                  "snippet": {
-                    "text": "RUN pip install \"boto3>=1.26.0\""
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "389f08b1d42080657323ccc341e780d8c8f3cb5a2d0598d983da9925337e228a025f9871f2fcb4645657f2cd0c4ce082b8c50e8e9b9a7d0e17b91a3adae7376b_0"
           },
           "properties": {}
         },
@@ -6664,7 +6602,38 @@
           "properties": {}
         },
         {
-          "ruleId": "072af968-94f7-3b31-a390-008ea7c3969e",
+          "ruleId": "777505a3-0924-3432-b55a-b081a2041005",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "The package cache was not deleted after running 'apt-get update', which increases the size of the image. Remove the package cache by appending '&& apt-get clean' at the end of apt-get command chain."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.rocm",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 1,
+                  "endLine": 14,
+                  "endColumn": 19,
+                  "snippet": {
+                    "text": "RUN apt-get update"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a5c38ffbf2f415d0a9278d9790c4d145c81653e433be6131d63eb526721a801d10483217d7951b67aa9402aad4c9627c2453db64e24575d3d0507777482b3e76_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "d8a52bb2-ac43-3c12-8552-3e05cd0aa7a5",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -6678,19 +6647,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 149,
+                  "startLine": 71,
                   "startColumn": 1,
-                  "endLine": 149,
-                  "endColumn": 24,
+                  "endLine": 71,
+                  "endColumn": 23,
                   "snippet": {
-                    "text": "RUN pip install IPython orjson python-multipart torchao pybind11"
+                    "text": "RUN pip install \"boto3>=1.26.0\""
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "7d45a3933621f9a6835772420031d5ddbf58d871e42cf5a2c5210696c9de745d19c56818d1b4d2bc1a52f80357c028dfb822cb444a3412287b13bc1f90b0f96c_0"
+            "matchBasedId/v1": "389f08b1d42080657323ccc341e780d8c8f3cb5a2d0598d983da9925337e228a025f9871f2fcb4645657f2cd0c4ce082b8c50e8e9b9a7d0e17b91a3adae7376b_0"
           },
           "properties": {}
         },
@@ -6726,11 +6695,11 @@
           "properties": {}
         },
         {
-          "ruleId": "59d2ee81-af18-3b52-904e-cb3f0631745e",
+          "ruleId": "072af968-94f7-3b31-a390-008ea7c3969e",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
           },
           "locations": [
             {
@@ -6740,19 +6709,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 167,
+                  "startLine": 149,
                   "startColumn": 1,
-                  "endLine": 167,
-                  "endColumn": 35,
+                  "endLine": 149,
+                  "endColumn": 24,
                   "snippet": {
-                    "text": "RUN pip uninstall -y aiter || true"
+                    "text": "RUN pip install IPython orjson python-multipart torchao pybind11"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "808d809a72cf0deff32633390c77d23556960ce12ec13f7acc782d657e55f9bad26f828586c98dd7e67dad79f3ec59d5fd551cb302e0f158633ab00f77b94d84_1"
+            "matchBasedId/v1": "7d45a3933621f9a6835772420031d5ddbf58d871e42cf5a2c5210696c9de745d19c56818d1b4d2bc1a52f80357c028dfb822cb444a3412287b13bc1f90b0f96c_0"
           },
           "properties": {}
         },
@@ -6788,7 +6757,7 @@
           "properties": {}
         },
         {
-          "ruleId": "8ccbbbb8-035b-352c-a949-8754533b9c53",
+          "ruleId": "59d2ee81-af18-3b52-904e-cb3f0631745e",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -6802,50 +6771,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 214,
+                  "startLine": 167,
                   "startColumn": 1,
-                  "endLine": 214,
-                  "endColumn": 34,
+                  "endLine": 167,
+                  "endColumn": 35,
                   "snippet": {
-                    "text": "RUN pip uninstall -y vllm || true"
+                    "text": "RUN pip uninstall -y aiter || true"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "808d809a72cf0deff32633390c77d23556960ce12ec13f7acc782d657e55f9bad26f828586c98dd7e67dad79f3ec59d5fd551cb302e0f158633ab00f77b94d84_2"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "fd41d486-9e4f-30fd-b264-4ac2df817150",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.rocm",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 216,
-                  "startColumn": 1,
-                  "endLine": 217,
-                  "endColumn": 10,
-                  "snippet": {
-                    "text": "RUN git clone https://github.com/RLFoundation/vllm-patch.git \\\n    && cd vllm-patch \\"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "74bf7ecc79ab64793fe4d0f9bd6ad25b47f9d8194a6e36681fa8711ef146cfae6f3b33ef6bcda13a3863f95ab11d212daab69b79b6b32a4d98d207cf13baedb9_3"
+            "matchBasedId/v1": "808d809a72cf0deff32633390c77d23556960ce12ec13f7acc782d657e55f9bad26f828586c98dd7e67dad79f3ec59d5fd551cb302e0f158633ab00f77b94d84_1"
           },
           "properties": {}
         },
@@ -6881,6 +6819,37 @@
           "properties": {}
         },
         {
+          "ruleId": "8ccbbbb8-035b-352c-a949-8754533b9c53",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.rocm",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 214,
+                  "startColumn": 1,
+                  "endLine": 214,
+                  "endColumn": 34,
+                  "snippet": {
+                    "text": "RUN pip uninstall -y vllm || true"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "808d809a72cf0deff32633390c77d23556960ce12ec13f7acc782d657e55f9bad26f828586c98dd7e67dad79f3ec59d5fd551cb302e0f158633ab00f77b94d84_2"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "11efba98-12b9-3a2b-943c-ea124d9466e0",
           "kind": "fail",
           "level": "warning",
@@ -6908,6 +6877,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "74bf7ecc79ab64793fe4d0f9bd6ad25b47f9d8194a6e36681fa8711ef146cfae6f3b33ef6bcda13a3863f95ab11d212daab69b79b6b32a4d98d207cf13baedb9_5"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "fd41d486-9e4f-30fd-b264-4ac2df817150",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.rocm",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 216,
+                  "startColumn": 1,
+                  "endLine": 217,
+                  "endColumn": 10,
+                  "snippet": {
+                    "text": "RUN git clone https://github.com/RLFoundation/vllm-patch.git \\\n    && cd vllm-patch \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "74bf7ecc79ab64793fe4d0f9bd6ad25b47f9d8194a6e36681fa8711ef146cfae6f3b33ef6bcda13a3863f95ab11d212daab69b79b6b32a4d98d207cf13baedb9_3"
           },
           "properties": {}
         },
@@ -6974,37 +6974,6 @@
           "properties": {}
         },
         {
-          "ruleId": "45357494-4929-32af-bc56-d99a50c00384",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.rocm",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 292,
-                  "startColumn": 1,
-                  "endLine": 292,
-                  "endColumn": 28,
-                  "snippet": {
-                    "text": "RUN pip install \"tensordict==0.6.2\" --no-deps && \\"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "f1ed638bb42b8734241471f071e56e2ff6b6d57697e8112b9c5f0da8292a407759109fc5903aa8e0c9270424823ef6d81810b33f1577a5547149aa89970191a0_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "5188d90d-903f-3ecb-a43f-8c57004aeb1b",
           "kind": "fail",
           "level": "warning",
@@ -7032,6 +7001,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "0a722b0c058a7c6f95f5434f5b1c888ff68e764d6ba168b60fd4a6bb14bd645311f2f1ace0e715043655ae81d6d03b86f333da9b64be0505372f1307b0e58015_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "45357494-4929-32af-bc56-d99a50c00384",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.rocm",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 292,
+                  "startColumn": 1,
+                  "endLine": 292,
+                  "endColumn": 28,
+                  "snippet": {
+                    "text": "RUN pip install \"tensordict==0.6.2\" --no-deps && \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "f1ed638bb42b8734241471f071e56e2ff6b6d57697e8112b9c5f0da8292a407759109fc5903aa8e0c9270424823ef6d81810b33f1577a5547149aa89970191a0_0"
           },
           "properties": {}
         },
@@ -7094,37 +7094,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "b1ca49be74fbb3f22ebc479e0e029bb3c71114f39866a52a606f9a6182a74d8f3c0331a6118ac633440d77d7e15f0c5050f18e9fe89860114073b9d4814606fe_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "eb14a648-7be6-3850-8d2e-092bed79d3ac",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Images should be tagged with an explicit version to produce deterministic container images."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.rocm_verl-0.3.0.post1",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 1,
-                  "endLine": 9,
-                  "endColumn": 14,
-                  "snippet": {
-                    "text": "FROM lmsysorg/sglang:v0.4.6.post5-rocm630"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "e66b5034bc148846ba58d8ad244f3d50cde9e5ba33494d22b23b7feba434c6c77ffaf6ea65910863c3deccd4c5234d82fa88c9e09e354625f2418c442f33a02a_0"
           },
           "properties": {}
         },
@@ -7439,37 +7408,6 @@
           "properties": {}
         },
         {
-          "ruleId": "a787f6e9-3aaf-3518-b600-687dedff9283",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "docker/Dockerfile.rocm_verl-0.4.1",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 214,
-                  "startColumn": 1,
-                  "endLine": 214,
-                  "endColumn": 34,
-                  "snippet": {
-                    "text": "RUN pip uninstall -y vllm || true"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "04459b199901e3f9afe00f5e0258c3535dae0413743bcc89ca9e88bba3518a6cce0388c74743a04d8cc35a8ea45f14759b904ddf8b18e51c1e98eb45e1130103_2"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "fbae2218-3890-32ab-883a-33d2ecbf8277",
           "kind": "fail",
           "level": "warning",
@@ -7497,6 +7435,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "399aa2b7bef453fff16518cfc763f3a69fd1dc995512ec79ccc759128e46df84ba5f2637141aae8c810834f933e6a424b78dcbd5e3f83a6db20774ca5435fa93_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "a787f6e9-3aaf-3518-b600-687dedff9283",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker/Dockerfile.rocm_verl-0.4.1",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 214,
+                  "startColumn": 1,
+                  "endLine": 214,
+                  "endColumn": 34,
+                  "snippet": {
+                    "text": "RUN pip uninstall -y vllm || true"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "04459b199901e3f9afe00f5e0258c3535dae0413743bcc89ca9e88bba3518a6cce0388c74743a04d8cc35a8ea45f14759b904ddf8b18e51c1e98eb45e1130103_2"
           },
           "properties": {}
         },
@@ -11407,37 +11376,6 @@
           "properties": {}
         },
         {
-          "ruleId": "c0579060-9854-335e-81f0-9db25cd02741",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "key `SupportedModel.DEEPSEEK_V3` is uselessly assigned twice"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "verl/models/mcore/registry.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 119,
-                  "startColumn": 64,
-                  "endLine": 131,
-                  "endColumn": 2,
-                  "snippet": {
-                    "text": "MODEL_FORWARD_FUSED_REGISTRY: dict[SupportedModel, Callable] = {\n    SupportedModel.LLAMA: fused_forward_gptmodel,\n    SupportedModel.QWEN2: fused_forward_gptmodel,\n    SupportedModel.QWEN2_MOE: fused_forward_gptmodel,\n    SupportedModel.MIXTRAL: fused_forward_gptmodel,\n    SupportedModel.DEEPSEEK_V3: fused_forward_gptmodel,\n    SupportedModel.QWEN2_5_VL: fused_forward_qwen2_5_vl,\n    SupportedModel.LLAMA4: fused_forward_gptmodel,\n    SupportedModel.QWEN3: fused_forward_gptmodel,\n    SupportedModel.QWEN3_MOE: fused_forward_gptmodel,\n    SupportedModel.QWEN2_5_VL: fused_forward_qwen2_5_vl,\n    SupportedModel.DEEPSEEK_V3: fused_forward_gptmodel,\n}"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "dceacd83e1cc8c6e3d79721a25d9846ba7818c98ea330ca758678190e8f5a5d2ca38bb082a7c9074f5493cd77f316969a2d5c09a4e6c35ce66ad26a2b778a944_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "0b7a65df-d398-3ceb-b287-edfdd3cc19e1",
           "kind": "fail",
           "level": "warning",
@@ -11465,6 +11403,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "6765e7f917aefb2b4a13fc69ee7333dca5e01bcfd3a775a5652d27f45b4e2fcacda00ffc39c89e690508d5951ef9a93bfffa650837f51c33cf855f82907621a9_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "c0579060-9854-335e-81f0-9db25cd02741",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "key `SupportedModel.DEEPSEEK_V3` is uselessly assigned twice"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/models/mcore/registry.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 64,
+                  "endLine": 131,
+                  "endColumn": 2,
+                  "snippet": {
+                    "text": "MODEL_FORWARD_FUSED_REGISTRY: dict[SupportedModel, Callable] = {\n    SupportedModel.LLAMA: fused_forward_gptmodel,\n    SupportedModel.QWEN2: fused_forward_gptmodel,\n    SupportedModel.QWEN2_MOE: fused_forward_gptmodel,\n    SupportedModel.MIXTRAL: fused_forward_gptmodel,\n    SupportedModel.DEEPSEEK_V3: fused_forward_gptmodel,\n    SupportedModel.QWEN2_5_VL: fused_forward_qwen2_5_vl,\n    SupportedModel.LLAMA4: fused_forward_gptmodel,\n    SupportedModel.QWEN3: fused_forward_gptmodel,\n    SupportedModel.QWEN3_MOE: fused_forward_gptmodel,\n    SupportedModel.QWEN2_5_VL: fused_forward_qwen2_5_vl,\n    SupportedModel.DEEPSEEK_V3: fused_forward_gptmodel,\n}"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "dceacd83e1cc8c6e3d79721a25d9846ba7818c98ea330ca758678190e8f5a5d2ca38bb082a7c9074f5493cd77f316969a2d5c09a4e6c35ce66ad26a2b778a944_0"
           },
           "properties": {}
         },
@@ -11531,37 +11500,6 @@
           "properties": {}
         },
         {
-          "ruleId": "a61b6820-139f-30a0-a061-229ddd6ec303",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "verl/protocol.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 283,
-                  "startColumn": 17,
-                  "endLine": 287,
-                  "endColumn": 10,
-                  "snippet": {
-                    "text": "        batch = torch.load(\n            batch_deserialized,\n            weights_only=False,\n            map_location=\"cpu\" if not get_torch_device().is_available() else None,\n        )"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "e8e642b26ffb1277a68daa056dabcbf9a0d766933128e42dd54d201db8050c92a872557fe0afec84e54eb1975bd67a7dbd4b56e41725eb22243e0bc5aabb72a4_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "568c2484-d0a5-3231-b870-f006aa5b44b4",
           "kind": "fail",
           "level": "warning",
@@ -11589,6 +11527,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "fa6375b1f56752d99395aae2f62588ba5f80690a7ce4cf9a35d16c56e1f4031f17b78ca54cdb94c8ca663730642657729f2f5118c75f5af934d21e204d459bee_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "a61b6820-139f-30a0-a061-229ddd6ec303",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/protocol.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 283,
+                  "startColumn": 17,
+                  "endLine": 287,
+                  "endColumn": 10,
+                  "snippet": {
+                    "text": "        batch = torch.load(\n            batch_deserialized,\n            weights_only=False,\n            map_location=\"cpu\" if not get_torch_device().is_available() else None,\n        )"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "e8e642b26ffb1277a68daa056dabcbf9a0d766933128e42dd54d201db8050c92a872557fe0afec84e54eb1975bd67a7dbd4b56e41725eb22243e0bc5aabb72a4_1"
           },
           "properties": {}
         },
@@ -11651,37 +11620,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "224138c646816d43a5dca46a0cfe34aca313ba84fac706d3003b20168ff3921b093b7b470c4a5b0a8b8c96f25f683b2e468fe72d68b72cb178ab52dcb8ca35b5_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "d3f060fa-cce0-388a-8b73-4ae3862f877c",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "time.sleep() call; did you mean to leave this in?"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "verl/single_controller/base/worker_group.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 120,
-                  "startColumn": 9,
-                  "endLine": 120,
-                  "endColumn": 29,
-                  "snippet": {
-                    "text": "        time.sleep(gap_time)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "2645affab0eae979b0d4d1c6aac4c44cfe67a167e1c709be763c64b18a48e3b3bc8cc2ce5e8727a1111cc6aebaf0d2d02058727fcc0347ab2b3e02b55f8e945d_0"
           },
           "properties": {}
         },
@@ -12151,37 +12089,6 @@
           "properties": {}
         },
         {
-          "ruleId": "4330e77d-130e-3872-bf89-97452ff7f964",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "verl/utils/debug/trajectory_tracker.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 74,
-                  "startColumn": 5,
-                  "endLine": 74,
-                  "endColumn": 29,
-                  "snippet": {
-                    "text": "    torch.save(data, buffer)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "84d064fab80d675b19d8b0c6c05e97818d4244c9d20c29a63327cc94b62a502c6024c708c8a9a3a0aafe85a256827f0adfe0b13147f575032b941cfeafc2eed7_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "845d2029-dbaf-34e0-8ef9-44ceaae58c1d",
           "kind": "fail",
           "level": "warning",
@@ -12209,6 +12116,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "85d1ed44f8b0d3ca12cdcb30e325fd68a964dd4275900761c37a126fae814a0fff3d105f18790395deaddbfde0756e802e1c9a4bb1106a2c76eb24e245651f9e_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "4330e77d-130e-3872-bf89-97452ff7f964",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/utils/debug/trajectory_tracker.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 5,
+                  "endLine": 74,
+                  "endColumn": 29,
+                  "snippet": {
+                    "text": "    torch.save(data, buffer)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "84d064fab80d675b19d8b0c6c05e97818d4244c9d20c29a63327cc94b62a502c6024c708c8a9a3a0aafe85a256827f0adfe0b13147f575032b941cfeafc2eed7_0"
           },
           "properties": {}
         },
@@ -14011,37 +13949,6 @@
           "properties": {}
         },
         {
-          "ruleId": "8e08b079-a12a-3b8f-8fb3-54f1c81bfede",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "verl/workers/rollout/vllm_rollout/vllm_rollout_spmd.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 454,
-                  "startColumn": 30,
-                  "endLine": 454,
-                  "endColumn": 50,
-                  "snippet": {
-                    "text": "            self.socket.send(pickle.dumps(result))"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "e752fbec1bf9eac6d3c49d4e8a77b855d72677eb2fd507b2b6abb0ebe1092810ea9fd46b64cdb9c5e3a4121159443036fd555cd926e8fbf0960320039ba4fcc6_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "9b93ac05-df9c-3f31-a3cc-ca60f91a9c41",
           "kind": "fail",
           "level": "warning",
@@ -14069,6 +13976,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "0a6301dbe82d58d24c12e3d9b4b6bfeeeaf6261ff9e9a574d0149cdf0ea1d381b7ff4448a808f93b374179f0d6ad1a42928de6b9155dac9c6151c487015384ad_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "8e08b079-a12a-3b8f-8fb3-54f1c81bfede",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verl/workers/rollout/vllm_rollout/vllm_rollout_spmd.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 454,
+                  "startColumn": 30,
+                  "endLine": 454,
+                  "endColumn": 50,
+                  "snippet": {
+                    "text": "            self.socket.send(pickle.dumps(result))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "e752fbec1bf9eac6d3c49d4e8a77b855d72677eb2fd507b2b6abb0ebe1092810ea9fd46b64cdb9c5e3a4121159443036fd555cd926e8fbf0960320039ba4fcc6_0"
           },
           "properties": {}
         }
